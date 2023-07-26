@@ -36,6 +36,18 @@ Isolation Forest: This algorithm isolates observations by randomly selecting a f
 
 Local Outlier Factor (LOF): The anomaly score of each sample is called the Local Outlier Factor. It measures the local deviation of density of a given sample with respect to its neighbors. It is local in that the anomaly score depends on how isolated the object is with respect to the surrounding neighborhood.
 
+The dataset used in this analysis is a credit card transaction dataset with 28481 rows and 31 columns. The columns are labeled as 'Time', 'V1' through 'V28', 'Amount', and 'Class'. The labels 'V1' through 'V28' are the result of a PCA transformation, and these represent components that are linear combinations of the original features. The PCA transformation was applied to protect sensitive information in the dataset. The 'Class' column is the target variable, where a value of '1' represents fraudulent transactions and '0' represents valid transactions.
+
+Upon inspection, we see that the dataset is heavily imbalanced with the 'Class' distribution being approximately 0.0017, indicating that fraudulent transactions are rare compared to valid transactions. This is not surprising as in real-world scenarios, fraud is typically a rare event.
+
+Two outlier detection models were trained on this dataset: Isolation Forest and Local Outlier Factor.
+
+Isolation Forest has an error of 71 and accuracy of 99.75%. The precision for detecting fraudulent cases (class 1) is 0.28, meaning that out of all the cases that the model identified as fraud, only 28% were actually fraud. The recall for fraudulent cases is 0.29, indicating that out of all actual fraud cases, the model was able to identify 29% of them correctly. This leads to an F1 score of 0.28, providing a balance between precision and recall for fraud cases.
+
+Local Outlier Factor has an error of 97 and accuracy of 99.65%. However, this model performs significantly worse in detecting fraud, with a precision and recall of only 0.02, leading to an F1 score of 0.02. This model is not suitable for the task of detecting fraud in this case.
+
+In conclusion, given the imbalanced nature of the data and the nature of the task (fraud detection), it is crucial to consider metrics beyond just accuracy when evaluating the model. While both models have high accuracy, their ability to correctly identify fraudulent transactions is notably different. The Isolation Forest model significantly outperforms the Local Outlier Factor model in detecting fraudulent cases in this scenario. Further investigation and tuning could potentially improve these results, and it could also be beneficial to look into other techniques that are specifically designed to handle imbalanced data.
+
 ## Evaluation
 After running the models, the script prints the number of errors for each model, their accuracy scores, and a full classification report.
 
