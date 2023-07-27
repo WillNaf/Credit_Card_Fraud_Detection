@@ -49,6 +49,9 @@ Local Outlier Factor has an error of 97 and accuracy of 99.65%. However, this mo
 In conclusion, given the imbalanced nature of the data and the nature of the task (fraud detection), it is crucial to consider metrics beyond just accuracy when evaluating the model. While both models have high accuracy, their ability to correctly identify fraudulent transactions is notably different. The Isolation Forest model significantly outperforms the Local Outlier Factor model in detecting fraudulent cases in this scenario. Further investigation and tuning could potentially improve these results, and it could also be beneficial to look into other techniques that are specifically designed to handle imbalanced data.
 
 ## Histogram Analysis
+
+![histograms](https://github.com/WillNaf/Credit_Card_Fraud_Detection/assets/118142412/8116e01d-d747-478d-b796-7c05af10af35)
+
 The image shows the histograms of each parameter in the dataset. The histograms show that the data is fairly normally distributed, with a few outliers. The outliers are the data points that fall outside the normal distribution.
 
 The following are the meanings of the different histograms in the image:
@@ -65,6 +68,10 @@ The classification report for the Isolation Forest algorithm shows that the algo
 However, it is important to note that the results of the outlier detection algorithms are based on the sample of data that was used. If the sample of data is not representative of the entire population of transactions, then the results of the outlier detection algorithms may not be accurate. Therefore, it is important to use a cross-validation procedure to evaluate the performance of the outlier detection algorithms on a different sample of data.
 
 ## Corrolation Matrix
+
+![correlation_matrix](https://github.com/WillNaf/Credit_Card_Fraud_Detection/assets/118142412/87db3d33-256f-4dd2-94eb-3667206e66ef)
+
+
 The classification report shows the following metrics:
 
 Precision: This is the fraction of predicted fraud cases that are actually fraud cases.
