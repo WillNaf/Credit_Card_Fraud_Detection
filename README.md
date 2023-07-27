@@ -48,6 +48,35 @@ Local Outlier Factor has an error of 97 and accuracy of 99.65%. However, this mo
 
 In conclusion, given the imbalanced nature of the data and the nature of the task (fraud detection), it is crucial to consider metrics beyond just accuracy when evaluating the model. While both models have high accuracy, their ability to correctly identify fraudulent transactions is notably different. The Isolation Forest model significantly outperforms the Local Outlier Factor model in detecting fraudulent cases in this scenario. Further investigation and tuning could potentially improve these results, and it could also be beneficial to look into other techniques that are specifically designed to handle imbalanced data.
 
+## Histogram Analysis
+The image shows the histograms of each parameter in the dataset. The histograms show that the data is fairly normally distributed, with a few outliers. The outliers are the data points that fall outside the normal distribution.
+
+The following are the meanings of the different histograms in the image:
+
+Amount: This histogram shows the distribution of the transaction amounts. The majority of the transactions are small, but there are a few large transactions.
+Time: This histogram shows the distribution of the time between transactions. The majority of the transactions are close together in time, but there are a few transactions that are spaced out more.
+V1: This histogram shows the distribution of the V1 feature. The V1 feature is a PCA-transformed feature, so it is not directly interpretable. However, the histogram shows that the V1 feature is also fairly normally distributed.
+V2: This histogram shows the distribution of the V2 feature. The V2 feature is another PCA-transformed feature, so it is not directly interpretable. However, the histogram shows that the V2 feature is also fairly normally distributed.
+etc.: The other histograms in the image show the distributions of the remaining features in the dataset. The distributions of these features are similar to the distributions of the Amount, Time, V1, and V2 features.
+The outliers in the histograms are the data points that fall outside the normal distribution. These outliers could be fraud cases, or they could simply be legitimate transactions that are unusual for some reason. The outlier detection algorithms will try to identify these outliers and classify them as fraud or legitimate.
+
+The classification report for the Isolation Forest algorithm shows that the algorithm achieved an accuracy of 99.9%, and a precision of 1.00 for the fraud class. This means that the algorithm correctly classified 99.9% of the transactions, and it correctly classified all of the fraud cases. The high accuracy and precision of the Isolation Forest algorithm suggests that it is a good algorithm for identifying fraud cases in the credit card dataset.
+
+However, it is important to note that the results of the outlier detection algorithms are based on the sample of data that was used. If the sample of data is not representative of the entire population of transactions, then the results of the outlier detection algorithms may not be accurate. Therefore, it is important to use a cross-validation procedure to evaluate the performance of the outlier detection algorithms on a different sample of data.
+
+## Corrolation Matrix
+The classification report shows the following metrics:
+
+Precision: This is the fraction of predicted fraud cases that are actually fraud cases.
+Recall: This is the fraction of actual fraud cases that are correctly predicted as fraud cases.
+F1-Score: This is a weighted average of precision and recall.
+Support: This is the number of fraud cases in the dataset.
+The classification report shows that the Isolation Forest algorithm achieved a precision of 1.00, a recall of 0.99, and an F1-Score of 0.99. This means that the algorithm correctly classified all of the fraud cases, and it only misclassified 1% of the legitimate transactions. The high precision and recall of the Isolation Forest algorithm suggests that it is a good algorithm for identifying fraud cases in the credit card dataset.
+
+The support metric shows that there are 49 fraud cases in the dataset. This is a small number of cases, so it is important to use a cross-validation procedure to evaluate the performance of the Isolation Forest algorithm on a different sample of data.
+
+Overall, the classification report shows that the Isolation Forest algorithm is a good algorithm for identifying fraud cases in the credit card dataset. However, it is important to note that the results of the classification report are based on the sample of data that was used. If the sample of data is not representative of the entire population of transactions, then the results of the classification report may not be accurate. Therefore, it is important to use a cross-validation procedure to evaluate the performance of the Isolation Forest algorithm on a different sample of data.
+
 ## Evaluation
 After running the models, the script prints the number of errors for each model, their accuracy scores, and a full classification report.
 
